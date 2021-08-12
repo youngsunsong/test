@@ -1,0 +1,29 @@
+2021-08-04 22:58:31,536 DEBUG    root            Loaded Command Group: ['gcloud', 'components']
+2021-08-04 22:58:31,540 DEBUG    root            Loaded Command Group: ['gcloud', 'components', 'install']
+2021-08-04 22:58:31,542 DEBUG    root            Running [gcloud.components.install] with arguments: [COMPONENT-IDS:1: "['kubectl']"]
+2021-08-04 22:58:31,555 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2021-08-04 22:58:31,660 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-v351.0.0.json HTTP/1.1" 200 159482
+2021-08-04 22:58:31,720 INFO     ___FILE_ONLY___ 
+
+2021-08-04 22:58:31,721 DEBUG    root            (gcloud.components.install) You cannot perform this action because you do not have permission to modify the Google Cloud SDK installation directory [/usr/local/google-cloud-sdk].
+
+Re-run the command with sudo: sudo /usr/local/google-cloud-sdk/bin/gcloud ...
+Traceback (most recent call last):
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/usr/local/google-cloud-sdk/lib/surface/components/install.py", line 84, in Run
+    args.component_ids, allow_no_backup=args.allow_no_backup)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 897, in Install
+    restart_args=restart_args)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 964, in Update
+    config.EnsureSDKWriteAccess(self.__sdk_root)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/core/config.py", line 198, in EnsureSDKWriteAccess
+    raise exceptions.RequiresAdminRightsError(sdk_root)
+googlecloudsdk.core.exceptions.RequiresAdminRightsError: You cannot perform this action because you do not have permission to modify the Google Cloud SDK installation directory [/usr/local/google-cloud-sdk].
+
+Re-run the command with sudo: sudo /usr/local/google-cloud-sdk/bin/gcloud ...
+2021-08-04 22:58:31,722 ERROR    root            (gcloud.components.install) You cannot perform this action because you do not have permission to modify the Google Cloud SDK installation directory [/usr/local/google-cloud-sdk].
+
+Re-run the command with sudo: sudo /usr/local/google-cloud-sdk/bin/gcloud ...

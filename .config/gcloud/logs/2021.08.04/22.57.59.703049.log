@@ -1,0 +1,75 @@
+2021-08-04 22:57:59,744 DEBUG    root            Loaded Command Group: ['gcloud', 'container']
+2021-08-04 22:57:59,761 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2021-08-04 22:57:59,764 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'get_credentials']
+2021-08-04 22:57:59,790 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true
+2021-08-04 22:57:59,794 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-08-04 22:57:59,796 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 196
+2021-08-04 22:57:59,797 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token
+2021-08-04 22:57:59,801 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 259
+2021-08-04 22:57:59,824 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true
+2021-08-04 22:57:59,826 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-08-04 22:57:59,828 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 196
+2021-08-04 22:57:59,829 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token
+2021-08-04 22:57:59,832 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 259
+2021-08-04 22:57:59,878 DEBUG    root            Running [gcloud.container.clusters.get-credentials] with arguments: [--region: "us-east4", NAME: "gtlc-cluster-1-clone-1"]
+2021-08-04 22:57:59,881 WARNING  root            Accessing a Kubernetes Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+2021-08-04 22:57:59,886 INFO     ___FILE_ONLY___ Fetching cluster endpoint and auth data.
+
+2021-08-04 22:57:59,916 DEBUG    root            (gcloud.container.clusters.get-credentials) ResponseError: code=403, message=Request had insufficient authentication scopes.
+
+If you are in a compute engine VM, it is likely that the specified scopes during VM creation are not enough to run this command.
+See https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam for more information about access scopes.
+See https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes for how to update access scopes of the VM.
+Traceback (most recent call last):
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1126, in GetCluster
+    .zone, cluster_ref.clusterId)))
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/container/v1/container_v1_client.py", line 494, in Get
+    config, request, global_params=global_params)
+  File "/usr/local/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 737, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+  File "/usr/local/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 743, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+  File "/usr/local/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 610, in __ProcessHttpResponse
+    http_response, method_config=method_config, request=request)
+apitools.base.py.exceptions.HttpForbiddenError: HttpError accessing <https://container.googleapis.com/v1/projects/sap-gtlc-devops/locations/us-east4/clusters/gtlc-cluster-1-clone-1?alt=json>: response: <{'www-authenticate': 'Bearer realm="https://accounts.google.com/", error="insufficient_scope", scope="https://www.googleapis.com/auth/cloud-platform"', 'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'date': 'Wed, 04 Aug 2021 22:57:59 GMT', 'server': 'ESF', 'cache-control': 'private', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'status': '403', 'content-length': '477', '-content-encoding': 'gzip'}>, content <{
+  "error": {
+    "code": 403,
+    "message": "Request had insufficient authentication scopes.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+        "domain": "googleapis.com",
+        "metadata": {
+          "method": "google.container.v1.ClusterManager.GetCluster",
+          "service": "container.googleapis.com"
+        }
+      }
+    ]
+  }
+}
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/usr/local/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 113, in Run
+    cluster, cluster_ref = _BaseRun(args, self.context)
+  File "/usr/local/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 41, in _BaseRun
+    cluster = adapter.GetCluster(cluster_ref)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1132, in GetCluster
+    raise exceptions.HttpException(error, util.HTTP_ERROR_FORMAT)
+googlecloudsdk.calliope.exceptions.HttpException: ResponseError: code=403, message=Request had insufficient authentication scopes.
+2021-08-04 22:57:59,919 ERROR    root            (gcloud.container.clusters.get-credentials) ResponseError: code=403, message=Request had insufficient authentication scopes.
+
+If you are in a compute engine VM, it is likely that the specified scopes during VM creation are not enough to run this command.
+See https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam for more information about access scopes.
+See https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes for how to update access scopes of the VM.

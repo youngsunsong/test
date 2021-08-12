@@ -1,0 +1,20 @@
+2021-08-04 23:13:35,493 DEBUG    root            Loaded Command Group: ['gcloud', 'container']
+2021-08-04 23:13:35,497 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2021-08-04 23:13:35,499 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'get_credentials']
+2021-08-04 23:13:35,525 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true
+2021-08-04 23:13:35,529 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-08-04 23:13:35,532 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 142
+2021-08-04 23:13:35,533 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token
+2021-08-04 23:13:35,537 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 250
+2021-08-04 23:13:35,558 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true
+2021-08-04 23:13:35,560 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-08-04 23:13:35,562 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 142
+2021-08-04 23:13:35,563 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token
+2021-08-04 23:13:35,566 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 250
+2021-08-04 23:13:35,592 DEBUG    root            Running [gcloud.container.clusters.get-credentials] with arguments: [--internal-ip: "True", --zone: "us-east4-a", NAME: "gtlc-cluster-1-clone-1"]
+2021-08-04 23:13:35,601 INFO     ___FILE_ONLY___ Fetching cluster endpoint and auth data.
+
+2021-08-04 23:13:35,691 DEBUG    root            Saved kubeconfig to /home/young_song/.kube/config
+2021-08-04 23:13:35,692 INFO     ___FILE_ONLY___ kubeconfig entry generated for gtlc-cluster-1-clone-1.
+
+2021-08-04 23:13:35,693 INFO     root            Display format: "default"

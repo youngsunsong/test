@@ -1,0 +1,31 @@
+2021-08-05 00:46:11,119 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2021-08-05 00:46:11,122 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2021-08-05 00:46:11,124 DEBUG    root            Running [gcloud.config.config-helper] with arguments: [--format: "json"]
+2021-08-05 00:46:11,140 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true
+2021-08-05 00:46:11,144 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-08-05 00:46:11,146 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 142
+2021-08-05 00:46:11,147 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token
+2021-08-05 00:46:11,149 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 251
+2021-08-05 00:46:11,175 INFO     root            Display format: "default json"
+2021-08-05 00:46:11,176 INFO     ___FILE_ONLY___ {
+  "configuration": {
+    "active_configuration": "default",
+    "properties": {
+      "core": {
+        "account": "416357049773-compute@developer.gserviceaccount.com",
+        "disable_usage_reporting": "True",
+        "project": "sap-gtlc-devops"
+      }
+    }
+  },
+  "credential": {
+    "access_token": "ya29.c.Ko8BCggPrv10fjl0F0EZhCQX6HUGUXJVjS3PIR1lB96S8KAk11Rd6ByMfOEk31H2GnQCIT_PkL2mLZZerYKDRBRZEWsq0rIq7R-DNOSArKTOeMUAVmpmDe59OvVgx1OikGEBdSS6hRa30EyEgGvcLxUEgZ0B_7DCzw-ihhn4A23K78QJR33oLo6NGJLbtcISOVk",
+    "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBmY2MwMTRmMjI5MzRlNDc0ODBkYWYxMDdhMzQwYzIyYmQyNjJiNmMiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF6cCI6IjExMzAwMzQ4Mzk0MzM0ODk1MDEzMyIsImV4cCI6MTYyODEyNzk3MSwiaWF0IjoxNjI4MTI0MzcxLCJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJzdWIiOiIxMTMwMDM0ODM5NDMzNDg5NTAxMzMifQ.UK9srgjRNNNDk8ygc9MqLwJPlRLhmjlTr2eT1QAgGpmV4c_e3us4rfgKCD4ZbS-RxE9VnZXxPvRPrQGcvJvzEr26Wlp-u3o4i7IAJTtg3US7SMWy0NFKCADVxb8YIUjF6TBcAuDVuaSblIkETh05CwbUasNTkYzNJjSuRjcpj9rpwt2hDJYjMntF2v2SH04xjFYE8hOnMKKOlOj72jtg951zmwM-B3JKC1QCiwMlFnWa0shezoLAIk29_QJn8yOE0iukLbN0ARez7siulPZbHnn5tn1tz1g1V2v_6fg-o8b1YuEKnjBSTGCCG3K-Df0R-YOKtd7rgjVXLVO7kMjjAA",
+    "token_expiry": "2021-08-05T01:45:53Z"
+  },
+  "sentinels": {
+    "config_sentinel": "/home/young_song/.config/gcloud/config_sentinel"
+  }
+}
+2021-08-05 00:46:11,177 INFO     ___FILE_ONLY___ 
+

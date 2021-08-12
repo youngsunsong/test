@@ -1,0 +1,57 @@
+2021-08-05 23:57:36,931 DEBUG    root            Loaded Command Group: ['gcloud', 'container']
+2021-08-05 23:57:36,935 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2021-08-05 23:57:36,937 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'get_credentials']
+2021-08-05 23:57:36,961 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true
+2021-08-05 23:57:36,964 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-08-05 23:57:36,966 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 142
+2021-08-05 23:57:36,967 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token
+2021-08-05 23:57:36,971 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 258
+2021-08-05 23:57:36,988 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true
+2021-08-05 23:57:36,990 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-08-05 23:57:36,992 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 142
+2021-08-05 23:57:36,993 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token
+2021-08-05 23:57:36,996 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/416357049773-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 258
+2021-08-05 23:57:37,022 DEBUG    root            Running [gcloud.container.clusters.get-credentials] with arguments: [--zone: "us-east4-a", NAME: "gtlc-cluster-2-clone-1"]
+2021-08-05 23:57:37,031 INFO     ___FILE_ONLY___ Fetching cluster endpoint and auth data.
+
+2021-08-05 23:57:37,435 DEBUG    root            (gcloud.container.clusters.get-credentials) ResponseError: code=404, message=Not found: projects/sap-gtlc-devops/zones/us-east4-a/clusters/gtlc-cluster-2-clone-1.
+No cluster named 'gtlc-cluster-2-clone-1' in sap-gtlc-devops.
+Traceback (most recent call last):
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1126, in GetCluster
+    .zone, cluster_ref.clusterId)))
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/container/v1/container_v1_client.py", line 494, in Get
+    config, request, global_params=global_params)
+  File "/usr/local/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 737, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+  File "/usr/local/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 743, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+  File "/usr/local/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 610, in __ProcessHttpResponse
+    http_response, method_config=method_config, request=request)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://container.googleapis.com/v1/projects/sap-gtlc-devops/locations/us-east4-a/clusters/gtlc-cluster-2-clone-1?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'date': 'Thu, 05 Aug 2021 23:57:37 GMT', 'server': 'ESF', 'cache-control': 'private', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'status': '404', 'content-length': '168', '-content-encoding': 'gzip'}>, content <{
+  "error": {
+    "code": 404,
+    "message": "Not found: projects/sap-gtlc-devops/zones/us-east4-a/clusters/gtlc-cluster-2-clone-1.",
+    "status": "NOT_FOUND"
+  }
+}
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/usr/local/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 113, in Run
+    cluster, cluster_ref = _BaseRun(args, self.context)
+  File "/usr/local/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 41, in _BaseRun
+    cluster = adapter.GetCluster(cluster_ref)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1130, in GetCluster
+    self.CheckClusterOtherZones(cluster_ref, api_error)
+  File "/usr/local/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1175, in CheckClusterOtherZones
+    raise not_found_error
+googlecloudsdk.api_lib.container.util.Error: ResponseError: code=404, message=Not found: projects/sap-gtlc-devops/zones/us-east4-a/clusters/gtlc-cluster-2-clone-1.
+No cluster named 'gtlc-cluster-2-clone-1' in sap-gtlc-devops.
+2021-08-05 23:57:37,438 ERROR    root            (gcloud.container.clusters.get-credentials) ResponseError: code=404, message=Not found: projects/sap-gtlc-devops/zones/us-east4-a/clusters/gtlc-cluster-2-clone-1.
+No cluster named 'gtlc-cluster-2-clone-1' in sap-gtlc-devops.

@@ -1,0 +1,9 @@
+2021-08-04 23:13:40,397 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2021-08-04 23:13:40,424 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'virtualenv']
+2021-08-04 23:13:40,455 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'unset']
+2021-08-04 23:13:40,494 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'get_value']
+2021-08-04 23:13:40,498 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'list']
+2021-08-04 23:13:40,869 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2021-08-04 23:13:40,872 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'configurations']
+2021-08-04 23:13:40,874 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2021-08-04 23:13:40,876 ERROR    root            (gcloud.config) Invalid choice: 'view'.
